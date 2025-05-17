@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-books"
+version = "0.1.0"
+description = "AI agent for browsing and extracting content from a book library using MCP"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+dependencies = [
+    "fastmcp==2.3.4",
+    "openai==1.79.0",
+    "openai-agents==0.0.15",
+    "openapi-pydantic==0.5.1",
+    "pydantic==2.11.4",
+    "pydantic-core==2.33.2",
+    "pydantic-settings==2.9.1",
+    "pypdf==5.5.0",
+    "sse-starlette==2.3.5",
+    "starlette==0.46.2",
+    "uvicorn==0.34.2",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "pytest>=7.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcp_books"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "B", "I"]
+ignore = []
+
+[project.scripts]
+mcp-books = "book_agent:main"
