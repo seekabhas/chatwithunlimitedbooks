@@ -1,0 +1,11 @@
+fastmcp==2.3.4
+openai==1.79.0
+openai-agents==0.0.15
+openapi-pydantic==0.5.1
+pydantic==2.11.4
+pydantic-core==2.33.2
+pydantic-settings==2.9.1
+pypdf==5.5.0
+sse-starlette==2.3.5
+starlette==0.46.2
+uvicorn==0.34.2
